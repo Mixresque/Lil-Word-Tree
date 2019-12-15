@@ -13,15 +13,38 @@ class LemmaAndSyn:
 
         self.morph = []  # MORPH
         self.mid = 0
-        self.antonym = []  # ANTONYM
+        self.antonym = set()  # ANTONYM
         self.hypernym = set()  #HYPERNYM
         self.hyponym = set()  # HYPONYM
-        self.derived = []  # DERIVED
+        self.derived = set()  # DERIVED
     
-    def populate(self, lemmas):
+    def populate(self, lemmas=wn.all_lemma_names()):
+        self.populate_lemma_and_synsets(lemmas)            
+        self.populate_derivations_and_antonyms()
+
+    def populate_lemma_and_synsets(self, lemmas=wn.all_lemma_names()):
         for lm in lemmas:
             # add lemma
             tlid = self._add_lemma(lm)
+                
+    def populate_derivations_and_antonyms(self):
+        for ss, psid in self.syn_name.items():
+            ps = wn.synset(ss)
+            for pl in ps.lemmas():
+                plid = self.lemma_name.get(pl.name())
+                if psid is not None and plid is not None:
+                    for dv in pl.derivationally_related_forms():
+                        csid, clid = self.syn_name.get(dv.synset().name()), self.lemma_name.get(dv.name())
+                        if csid is not None and clid is not None:
+                            self.derived.add((psid, plid, csid, clid))
+                            
+                    for dv in pl.antonyms():
+                        csid = self.syn_name.get(dv.synset().name())
+                        if csid is not None:
+                            self.antonym.add((psid, csid))
+                        # csid, clid = self.syn_name.get(dv.synset().name()), self.lemma_name.get(dv.name())
+                        # if csid is not None and clid is not None:
+                        #     self.antonym.add((psid, plid, csid, clid))
     
     def _add_lemma(self, lm):
         tlid = self.lemma_name.setdefault(lm, self.lid)
@@ -85,7 +108,7 @@ class LemmaAndSyn:
 
 def __main__():
     ls = LemmaAndSyn()
-    ls.populate(wn.all_lemma_names())
+    ls.populate()
     for f, pos in zip(('adj.exc', 'adv.exc', 'noun.exc', 'verb.exc'), ('a', 'r', 'n', 'v')):
         ls.load_morph_exceptions('./'+f, pos)
 

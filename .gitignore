@@ -1,3 +1,10 @@
+*.pkl
+*.log
+Load*.sql
+
+# Morph exception data
+*.exc
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

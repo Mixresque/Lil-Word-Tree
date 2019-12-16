@@ -1,3 +1,14 @@
+# Intermediate results and variables
+*.pkl
+*.log
+
+# Generated sql files
+Load*.sql
+add*.sql
+
+# Morph exception data
+*.exc
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

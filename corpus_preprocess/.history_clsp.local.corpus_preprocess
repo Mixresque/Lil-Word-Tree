@@ -1,0 +1,5 @@
+2019 Dec 18 Wed 15:59:39 EST b17 /export/c05/cguo/wordnet/corpus_preprocess 20005  cd ../corpus_preprocess/
+2019 Dec 18 Wed 15:59:40 EST b17 /export/c05/cguo/wordnet/corpus_preprocess 20006  ls
+2019 Dec 18 Wed 15:59:42 EST b17 /export/c05/cguo/wordnet/corpus_preprocess 20007  wc -l *
+2019 Dec 18 Wed 16:00:31 EST b17 /export/c05/cguo/wordnet/corpus_preprocess 20008  vim local-settings.sh 
+2019 Dec 18 Wed 16:01:43 EST b17 /export/c05/cguo/wordnet/corpus_preprocess 20009  vim do_preprocess.sh 

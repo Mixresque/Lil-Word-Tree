@@ -1,3 +1,9 @@
+sql-populatedb/
+log/
+logv2/
+data/
+logv2/
+
 # Intermediate results and variables
 *.pkl
 *.log

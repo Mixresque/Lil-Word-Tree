@@ -113,7 +113,7 @@ class LemmaAndSyn:
                 self.morph.append((self.mid, mm[0], lid, pos)) # , 0)  - embeddingid
                 self.mid += 1
 
-    def export_sql(self, file='./LoadLemmaAndSyn.sql'):
+    def export_sql(self, file='./sql-populatedb/LoadLemmaAndSyn.sql'):
         print("Exporting to " + file)
         f = open(file, "w")
         # f.write('USE wordtree;\n')
@@ -188,11 +188,11 @@ def __main__():
     ls.populate()
 
     import pickle
-    with open("lemma_to_id.pkl", 'wb') as f:
+    with open("./data/lemma_to_id.pkl", 'wb') as f:
         pickle.dump(ls.lemma_name, f)
 
     for f, pos in zip(('adj.exc', 'adv.exc', 'noun.exc', 'verb.exc'), ('a', 'r', 'n', 'v')):
-        ls.load_morph_exceptions('./'+f, pos)
+        ls.load_morph_exceptions('./data/'+f, pos)
     ls.export_sql()
 
     print('lemma', len(ls.lemma))

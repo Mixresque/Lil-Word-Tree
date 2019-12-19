@@ -3,6 +3,8 @@ log/
 logv2/
 data/
 logv2/
+corpus/
+temp*
 
 # Intermediate results and variables
 *.pkl

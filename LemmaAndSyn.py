@@ -37,7 +37,7 @@ class LemmaAndSyn:
                 if psid is not None and plid is not None:
                     for dv in pl.derivationally_related_forms():
                         csid, clid = self.syn_name.get(dv.synset().name()), self.lemma_name.get(dv.name())
-                        if csid is not None and clid is not None:
+                        if csid is not None and clid is not None and plid < clid:
                             self.derived.add((psid, plid, csid, clid))
                             
                     for dv in pl.antonyms():

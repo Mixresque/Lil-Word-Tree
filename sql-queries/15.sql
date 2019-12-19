@@ -36,5 +36,14 @@ BEGIN
 END$$
 DELIMITER ;
 
-CALL ShowLeaves('food');
+DROP PROCEDURE IF EXISTS Leaves;
+DELIMITER $$
+CREATE PROCEDURE Leaves(_t VARCHAR(80))
+BEGIN
+      CALL CountLeaves('food');
+      CALL ShowLeaves('food');
+END$$
+DELIMITER ;
+
 CALL CountLeaves('food');
+CALL ShowLeaves('food');

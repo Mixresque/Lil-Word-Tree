@@ -1,0 +1,130 @@
+<html>
+ <head>
+  <title>wordtree</title>
+ </head>
+ <body>
+
+
+ <h2>Show all topics in the database.</h2>
+ <form action="showTopics.php" method="post">
+  <!-- SSN: <input type="text" name="ssn"><br> -->
+  <input type="Submit">
+ </form>
+
+ <br>
+
+ <h2>Show top-k most frequent words specialized word for a certain topic.</h2>
+ <form action="q4.php" method="post">
+  Topic: <input type="text" name="topic"><br>
+  Number of words: <input type="text" name="topk"><br>
+  <input type="Submit">
+ </form>
+
+ <br>
+ 
+ <h2>Show top-k most common words for a certain topic.</h2>
+ <form action="q1.php" method="post">
+  Topic: <input type="text" name="topic"><br>
+  Number of words: <input type="text" name="topk"><br>
+  <input type="Submit">
+ </form>
+
+ <br>
+
+ <h2>Show top-k words recommended for Topic1 when you know Topic2.</h2>
+ <form action="q2.php" method="post">
+  Topic1: <input type="text" name="topic1"><br>
+  Topic2: <input type="text" name="topic2"><br>
+  Number of words: <input type="text" name="topk"><br>
+  <input type="Submit">
+ </form>
+
+ <br>
+
+ <h2>Show top-k words recommended to be learned for a certain topic.</h2>
+ <form action="q3.php" method="post">
+  Topic: <input type="text" name="topic"><br>
+  Number of words: <input type="text" name="topk"><br>
+  <input type="Submit">
+ </form>
+
+ <br>
+
+ <h2>Find word pairs such that one word is derived from the other, and they are also synonyms.</h2>
+ <form action="q10.php" method="post">
+  <!-- SSN: <input type="text" name="ssn"><br> -->
+  <input type="Submit">
+ </form>
+
+ <br>
+
+ <h2>List the words that are derived from another word but are more commonly used than their base form.</h2>
+ <form action="q5.php" method="post">
+  <!-- SSN: <input type="text" name="ssn"><br> -->
+  <input type="Submit">
+ </form>
+
+ <br>
+
+ <h2>List the chains of derived words for a given word</h2>
+ <form action="q8.php" method="post">
+  Word: <input type="text" name="word"><br>
+  <input type="Submit">
+ </form>
+
+ <br>
+
+ <h2> How many words are there in the database for a specific food item?  (number of leafnodes that are descendants of the meaning of “food” in this ontology)</h2>
+ <form action="q15.php" method="post">
+  Word: <input type="text" name="word" value="food"><br>
+  <input type="Submit">
+ </form>
+
+ <br>
+
+ <!-- <h2>  List the number of meanings, the number of synonyms and the number of antonymsfor every word in the database)</h2>
+ <form action="q15.php" method="post">
+  Word: <input type="text" name="word"><br>
+  <input type="Submit">
+ </form>
+
+ <br> -->
+
+ <!-- <h2>Show rawscores of all students in the database</h2>
+ <form action="hw3_AllRawScores.php" method="post">
+  Password: <input type="text" name="password"><br>
+  <input type="Submit">
+ </form>
+
+ <br>
+
+ <h2>Show percentage scores and weighted averages of all students in the database</h2>
+ <form action="hw3_AllPercentages.php" method="post">
+  Password: <input type="text" name="password"><br>
+  <input type="Submit">
+ </form>
+
+ <br>
+
+ <h2>Show statistics</h2>
+ <form action="hw3_Stats.php" method="post">
+  Password: <input type="text" name="password"><br>
+  <input type="Submit">
+ </form>
+
+ <br> -->
+<!-- 
+ <h2>Change scores of a student</h2>
+ <form action="hw3_ChangeScores.php" method="post">
+    <table>
+        <tr> <td> Password: </td> <td> <input type="text" name="password"> </td> </tr>
+        <tr> <td> SSN: </td> <td> <input type="text" name="ssn"> </td> </tr>
+        <tr> <td> Assignment name: </td> <td> <input type="text" name="assignment_name"> </td> </tr>
+        <tr> <td> New score: </td> <td> <input type="text" name="new_score"> </td> </tr>        
+    </table>
+    <input type="Submit">
+ </form> -->
+
+
+ </body>
+</html>

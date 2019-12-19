@@ -80,8 +80,3 @@ CALL ShouldLearn('computer',20);
 CALL ShouldLearn('christian',20);
 CALL ShouldLearn('space',20);
 CALL GiveDef('mythology',20);
-
-
-
-
-

@@ -1,6 +1,6 @@
 <html>
  <head>
-  <title>Change Scores</title>
+  <title>wordtree</title>
  </head>
  <body>
 
@@ -24,14 +24,13 @@
 
       // if ($mysqli->multi_query("CALL ChangeScore('$password', '$SSN', '$assignment_name', '$new_score');")) {
 
-      if ($mysqli->multi_query("CALL DomainDiff('$topic2','$topic1',$topk);")) {
+      if ($mysqli->multi_query("CALL DomainDiff('$topic1','$topic2','$topk');")) {
         if ($result = $mysqli->store_result()) {
-
             printf("<h2>Show top-k words recommended for Topic1 when you know Topic2.: </h2>\n");
             echo "<table border=1 cellpadding=10>\n";
             echo "<tr> <th>word</th> </tr>\n";
             while($row = $result->fetch_array()) {
-              printf("<tr> <td>%s</td> <td>%s</td> </tr>\n", $row["lName"]);
+              printf("<tr> <td>%s</td> </tr>\n", $row["lName"]);
             }
             echo "</table>\n";
             

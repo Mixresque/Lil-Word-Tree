@@ -1,6 +1,6 @@
 <html>
  <head>
-  <title>Change Scores</title>
+  <title>wordtree</title>
  </head>
  <body>
 

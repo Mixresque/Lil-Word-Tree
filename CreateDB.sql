@@ -26,7 +26,7 @@ CREATE TABLE MORPH (
   mid INT(8) UNSIGNED NOT NULL,
   mName VARCHAR(64) NOT NULL,
   lid INT(8) UNSIGNED NOT NULL,
-  pos ENUM('n','v','a', 'r', 's', 'l') NOT NULL,
+  pos ENUM('n','v','a', 'r', 's') NOT NULL,
   PRIMARY KEY (mid),
   FOREIGN KEY (lid) REFERENCES LEMMA(lid)
 );
@@ -34,7 +34,7 @@ CREATE TABLE MORPH (
 CREATE TABLE SYN (
   sid INT(8) UNSIGNED NOT NULL,
   definition mediumtext NOT NULL,
-  pos ENUM('n','v','a', 'r', 's', 'l') NOT NULL,
+  pos ENUM('n','v','a', 'r', 's') NOT NULL,
   PRIMARY KEY (sid)
 );
 

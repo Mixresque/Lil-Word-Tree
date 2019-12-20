@@ -1,6 +1,6 @@
 <html>
  <head>
-  <title>Change Scores</title>
+  <title>wordtree</title>
  </head>
  <body>
 
@@ -29,6 +29,8 @@
             echo("</span>");
             $result->close();
 
+            echo("<br><form action=\"hideTopics.php\" method=\"post\"><input type=\"Submit\" value=\"Hide\"></form>");
+          
             echo("<br><h2>Show top-k most frequent words specialized word for a certain topic.</h2><form action=\"q4.php\" method=\"post\">Topic: <input type=\"text\" name=\"topic\"><br>Number of words: <input type=\"text\" name=\"topk\"><br><input type=\"Submit\"></form>");
             echo("\n<br><h2>Show top-k most common words for a certain topic.</h2><form action=\"q1.php\" method=\"post\">Topic: <input type=\"text\" name=\"topic\"><br>Number of words: <input type=\"text\" name=\"topk\"><br><input type=\"Submit\"></form>");
             echo("\n<br><h2>Show top-k words recommended for Topic1 when you know Topic2.</h2><form action=\"q2.php\" method=\"post\">Topic1: <input type=\"text\" name=\"topic1\"><br>Topic2: <input type=\"text\" name=\"topic2\"><br>Number of words: <input type=\"text\" name=\"topk\"><br><input type=\"Submit\"></form>");

@@ -1,6 +1,6 @@
 <html>
  <head>
-  <title>Change Scores</title>
+  <title>wordtree</title>
  </head>
  <body>
 
@@ -26,7 +26,6 @@
       if ($mysqli->multi_query("SELECT tName from TOPIC")) {
         if ($result = $mysqli->store_result()) {
 
-            printf("<h2> List the number of meanings, the number of synonyms and the number of antonymsfor every word in the database. </h2>\n");
             echo "<table border=1 cellpadding=10>\n";
             echo "<tr> <th>topic</th> </tr>\n";
             while($row = $result->fetch_array()) {
